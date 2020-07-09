@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import witm from '../images/witm-sq.jpg';
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 const FooterSection = styled.div`

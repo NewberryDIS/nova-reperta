@@ -4,11 +4,11 @@ import styled from "@emotion/styled";
 import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
 import Navbar from '../components/navbar';
-import wpc from '../images/time-machine-splash-background.jpg';
-import eraBellThompson from '../images/tm-eraBellThompson.png';
-import blackHawk from '../images/tm-blackHawk.png';
-import errettGraham from '../images/tm-errettGraham.png';
-import juliaNewberry from '../images/tm-juliaNewberry.png';
+import cat1 from '../images/cat-1.png';
+import cat27 from '../images/cat-27.png';
+import cat44 from '../images/cat-44.png';
+import plate2 from '../images/plate-2.png';
+import plate5 from '../images/plate-5.png';
 import '../components/layout.css'
 import TwitterButton from '../components/twitter';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
@@ -19,7 +19,10 @@ const Text  = styled.div`
     padding: 15px 30px ;
 `
 const Title  = styled.p`
-    font-family: 'Hepta Slab',serif;
+    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Fondamento', cursive;
+    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'EB Garamond', serif;
     font-weight: 900;
     margin: 0;
     filter: drop-shadow(0 0 0.25rem #000);
@@ -50,6 +53,8 @@ const Splash = styled.div`
     box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
     position: relative;
     .splashleft {
+        // -webkit-text-fill-color: transparent;
+        // -webkit-background-clip: text;
         width: calc(100% - 80px);
         @media (max-width: 800px) {width: 100%;} 
     }
@@ -131,6 +136,38 @@ const Splash = styled.div`
     }
     
 `
+
+const Tester = styled.div`
+
+  
+  section.light {
+    background: #eee;
+  
+    .gradient1 {
+        display: inline-block;
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            
+            background: url('${cat27}');
+            pointer-events: none;
+        }
+        color: #000;
+        background: #fff;
+        mix-blend-mode: multiply;
+        &::before {
+          mix-blend-mode: screen;
+        }
+    }
+    
+  }
+  
+  
+
+`
 const CirclePanel = styled.div`
     position: absolute;
     display: flex;
@@ -168,7 +205,7 @@ const Main  = props => (
     <div >
         <Helmet>
             <meta charSet="utf-8" />
-            <title>Newberry's Midwest Time Machine</title>
+            <title>Newberry's Nova Reperta Time Machine</title>
         </Helmet>
         <Global styles={css`
         * {
@@ -176,7 +213,7 @@ const Main  = props => (
         }
         body {
             margin: 0;
-            background: url('${wpc}');
+            background: url('${cat27}');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -195,6 +232,11 @@ const Main  = props => (
                 <Title className="lower">
                     Time Machine
                 </Title>
+                <Tester>
+                    <section class="light">
+                        <h1 class="gradient1">CSS Gradient Text</h1>
+                    </section>
+                </Tester>
                 <Text className="text">
                 Travel to the Renaissance through the Newberry’s engravings, maps, and books––using the Nova Reperta print series as a guide. </Text>
                 <Text className="text">
@@ -204,10 +246,10 @@ const Main  = props => (
                 <OutboundLink className="transcribeButton"  href="https://publications.newberry.org/digital/mms-transcribe/index" target="_blank" rel="noopener noreferrer">Unlock more stories from the past at our transcription crowdsourcing project:<br/>NEWBERRY TRANSCRIBE</OutboundLink>
             </div>
             <CirclePanel>
-                <CircleImage src={ blackHawk } alt=""/>
-                <CircleImage src={ errettGraham } alt=""/>
-                <CircleImage src={ eraBellThompson } alt=""/>
-                <CircleImage src={ juliaNewberry } alt=""/>
+                <CircleImage src={ cat1 } alt=""/>
+                <CircleImage src={ plate2 } alt=""/>
+                <CircleImage src={ plate5 } alt=""/>
+                <CircleImage src={ cat44 } alt=""/>
             </CirclePanel>
         </Splash>
     </div>

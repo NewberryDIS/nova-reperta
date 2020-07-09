@@ -3,7 +3,7 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' 
 import twicon from '../images/twicon.png';
-import paper from '../images/paper.png';
+// import paper from '../images/paper.png';
 
 const TwitterButton = () => (
     <div className="wrapper" css={css`
@@ -13,7 +13,6 @@ const TwitterButton = () => (
         top: 12px;
         right: 10px;
         border-radius: 8px;
-        background-image: url(${paper});
         background: #641818;
         border: 2px solid white;
         &:hover {

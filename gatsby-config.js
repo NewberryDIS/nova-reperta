@@ -52,9 +52,9 @@ module.exports = {
             variants: [`100i`,`300i`,`400`]
           },
           {
-            family: `Hepta Slab`,
-            variants: [`400`, `700`]
-          },
+            family: `EB Garamond`,
+            variants: [`700`]
+          }, 
           {
             family: `Ultra`,
             variants: [`400`, `700`]
