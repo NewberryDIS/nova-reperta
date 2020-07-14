@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Newberry Time Machine`,
+    title: `Newberry Nova Reperta Time Machine`,
     description: `Travel through time with the Newberry`,
     author: `c2lknt`,
   },
-  pathPrefix: `/time-machine`, 
+  pathPrefix: `/nova-reperta`, 
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -59,6 +59,11 @@ module.exports = {
             family: `Ultra`,
             variants: [`400`, `700`]
           },
+          { family: 'IM Fell DW Pica SC' },
+          { family: 'Old Standard TT' },
+          { family: 'Cormorant Upright' },
+          { family: 'Goudy Bookletter 1911' },
+          { family: 'Uncial Antiqua' },
         ],
       },
     }

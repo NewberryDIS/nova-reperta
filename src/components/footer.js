@@ -57,7 +57,7 @@ const FooterSection = styled.div`
 `
 // data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
 
-const FooterWrapper = styled.div`
+const FooterWrapper = styled.footer`
     background: white;
     -moz-box-shadow:    inset 0 0 10px #000000;
     -webkit-box-shadow: inset 0 0 10px #000000;
@@ -67,13 +67,15 @@ const FooterWrapper = styled.div`
     @media only screen and (max-width: 700px) {
         flex-direction: column;
     }
+    width: 100%;
+
 `
 const Footer = (props) => {
     return (
         <FooterWrapper width={props.width}>
             <FooterSection className="left">
                 <p className="witmbox">
-                    Part of <OutboundLink className="smlink" target="_blank" rel="noopener noreferrer" href="https://www.newberry.org/whatisthemidwest">What Is the Midwest</OutboundLink>, a multidisciplinary project funded by The Andrew W. Mellon Foundation
+                   Need new content here, or not.
                 </p>
                 <OutboundLink className="lglink" target="_blank" rel="noopener noreferrer" href="https://www.newberry.org/contact-librarian">
                     Contact Us
@@ -91,7 +93,7 @@ const Footer = (props) => {
             </FooterSection>
             <FooterSection className="right">
                 <p>Edited by <OutboundLink className="smlink" href="https://www.newberry.org/staff-biographies#wolfe" target="_blank" rel="noopener noreferrer">Jen Wolfe</OutboundLink> and developed by <span className="emphasis">Nick White</span> of the Newberry’s Digital Initiatives and Services department. 
-                Code is available for repurposing: <OutboundLink className="smlink" target="_blank" rel="noopener noreferrer" href="https://github.com/newberrydis/time-machine">Midwest Time Machine repository</OutboundLink>.  
+                Code is available for repurposing: <OutboundLink className="smlink" target="_blank" rel="noopener noreferrer" href="https://github.com/newberrydis/nova-reperta">Nova Reperta Time Machine repository</OutboundLink>.  
                 Interactive maps created using the open-source software <OutboundLink className="smlink" href="https://storymap.knightlab.com/" target="_blank" rel="noopener noreferrer">StoryMapJS</OutboundLink>. 
                 Grateful acknowledgement to &nbsp;<OutboundLink className="smlink" target="_blank" rel="noopener noreferrer" href="https://www.wbez.org/shows/curious-city/7b79e16d-f3a9-4156-9b27-4d2cc6ce351e?_ga=2.28540796.1753639261.1569526664-1089342726.1568933062">WBEZ’s Curious City&nbsp;</OutboundLink>and the inspiration from their site &nbsp;<OutboundLink className="smlink" target="_blank" rel="noopener noreferrer" href="http://interactive.wbez.org/curiouscity/1910train/">If you toured Chicago in 1910, what would you do?</OutboundLink></p>
             </FooterSection>

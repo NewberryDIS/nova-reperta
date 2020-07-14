@@ -3,7 +3,6 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' 
 import twicon from '../images/twicon.png';
-// import paper from '../images/paper.png';
 
 const TwitterButton = () => (
     <p className="wrapper" css={css`
@@ -12,13 +11,14 @@ const TwitterButton = () => (
         position: absolute;
         top: 12px;
         right: 10px;
-        border-radius: 8px;
-        background: #641818;
-        border: 2px solid white;
         &:hover {
             .twittericon img {
-                filter: drop-shadow(0 0 0.25rem white);
+                filter: drop-shadow(0 0 0.25rem white)
+                        invert(100%);
             }
+            border: 2px solid rgba(0,0,0,1); 
+            background: rgba(255,255,255,0.85);
+            box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
         }
         img {
             transition: all .15s ease-in-out;

@@ -69,34 +69,98 @@ const Navchunk = styled.div`
         }
     }
 `
+const Navchun = styled.div`
 
+.navwrapper {
+    margin: auto;
+    padding: 40px;
+    position: relative;
+    
+}
+.navbox {
+    z-index: 200;
+    position: fixed;
+    top: 5px;
+    left: 7px;
+    height: 60px;
+    display: inline-flex;
+    flex-direction: row;
+    transition: all .15s ease-in-out;
+
+    font-family: 'Goudy Bookletter 1911',serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+
+    margin: 25px auto;
+
+
+    border: 4px solid rgba(0,0,0,0.5);
+    border-radius: 1vw;
+}
+.texteffect {
+    color: black;
+    mix-blend-mode: screen;
+}
+
+.zero    { font-family: 'Cormorant Upright' , serif;         }
+.one     { font-family: 'Goudy Bookletter 1911' , serif;     }
+
+a {
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 055px;
+    padding: 0 15px;
+}
+.hovereffect {
+    background-color: rgba(251, 251, 251, 0.85);
+    &:hover {
+        background-color: rgba(251, 251, 251, 0.5);
+    }
+    img {
+        // filter: invert(100%); 
+        &:hover {
+            filter: invert(100%); 
+        }
+    }
+    a {
+        color: black;
+        &:hover {
+            color: white;
+        }
+    }
+}
+`
 export default class Navbar extends React.Component {
     render(){
         return(
-            <Navchunk className="navleft" >
-                    <OutboundLink href="http://www.newberry.org" className="nav-n-logo">
-                        <img alt="Newberry Logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
-                    </OutboundLink>{console.log(this.props.location.pathname)}
-                    {   this.props.location.pathname === '/time-machine/' ? 
+            <Navchun className="navwrapper" >
+                <div className="navbox texteffect hovereffect">
+                    <OutboundLink href="http://www.newberry.org" >
+                        <img alt="Newberry Logo" src={logob}/>
+                    </OutboundLink>
+                    { this.props.location.pathname === '/indexx' ? 
                             <Link to="/" className="nav-textlink" id="nav-homelink">
                                 &gt; Digital Newberry
                             </Link> 
-                        : 
-                            this.props.location.pathname === '/time-machine/choose/' ? 
-                                <Link to="/" className="nav-textlink" id="nav-homelink">
-                                    &gt; Time Machine
-                                </Link> 
-                            : 
-                                <Fragment>
-                                    <Link to="/" className="nav-textlink" id="nav-homelink">
-                                        &gt; Time Machine
-                                    </Link>
-                                    <Link to="/choose" className="nav-textlink" id="nav-chooselink">
-                                        &gt; Swap Traveler
-                                    </Link>
-                                </Fragment>
+                    : 
+                        this.props.location.pathname === '/time-machine/choose/' ? 
+                        <Link to="/" className="nav-textlink" id="nav-homelink">
+                            &gt; Time Machine
+                        </Link> 
+                    : 
+                        <Fragment>
+                            <Link to="/" className="nav-textlink" id="nav-homelink">
+                                &gt; Time Machine
+                            </Link>
+                            <Link to="/choose" className="nav-textlink" id="nav-chooselink">
+                                &gt; Swap Traveler
+                            </Link>
+                        </Fragment>
                     }
-            </Navchunk>
+                </div>
+            </Navchun>
         )
     }
 }

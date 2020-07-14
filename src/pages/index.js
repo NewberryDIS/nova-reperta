@@ -1,53 +1,43 @@
+import React, { useState } from 'react'
 /** @jsx jsx */
 import { css, jsx, Global } from '@emotion/core';
 import styled from "@emotion/styled";
 import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
-import Navbar from '../components/navbar';
+import Navbar from '../components/navbar-iotmw';
+import Footer from '../components/footer'
 import cat1 from '../images/cat-1.png';
 import cat27 from '../images/cat-27.png';
 import cat44 from '../images/cat-44.png';
 import plate2 from '../images/plate-2.png';
 import plate5 from '../images/plate-5.png';
 import '../components/layout.css'
-import TwitterButton from '../components/twitter';
+import TwitterButton from '../components/twitter-iotmw';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
+
+import LogoJumbo from '../components/logo';
+
+
+import argos from '../fonts/Argos-Regular.ttf.woff'
+import bucephalus from '../fonts/Bucephalus.ttf.woff'
+import deutsche from '../fonts/Deutsche-Uncialis.ttf.woff'
+import eltic from '../fonts/Eltic.ttf.woff'
+import foucault from '../fonts/Foucault.ttf.woff'
+import livingstone from '../fonts/Livingstone.ttf.woff'
+import onciale from '../fonts/Onciale-PhF.ttf.woff'
+import ramsey from '../fonts/Ramsey-SD.ttf.woff'
+import unzialish from '../fonts/UnZialish.ttf.woff'
+
 
 const Text  = styled.div`
     font-family: 'Lato', sans-serif;
     font-size: calc(1vw + 15px);
     padding: 15px 30px ;
 `
-const Title  = styled.p`
-    font-family: 'Fredericka the Great', cursive;
-    font-family: 'Fondamento', cursive;
-    font-family: 'Cinzel Decorative', cursive;
-    font-family: 'EB Garamond', serif;
-    font-weight: 900;
-    margin: 0;
-    filter: drop-shadow(0 0 0.25rem #000);
-    color: #fff;
-    text-shadow:
-        -1px -1px 0 #000,  
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
-    &.upper {
-        font-size: calc(7vw + 20px);
-        line-height: calc(5vw);
-    }
-    &.lower {
-        font-size: calc(4vw + 12px);
-        margin: 0 0 10px 0;
-        line-height: calc(4vw + 12px);;
-    }
-`
 const Splash = styled.div`
-    margin: 100px auto;
+    margin: 5vh auto;
     padding: 30px;
-    width: 80%;
-    @media (min-width: 967px) {width: 60%;} 
-    border-radius: 3px;                        
+    // border-radius: 3px;                        
     border: 2px solid rgba(0,0,0,1); 
     background: rgba(255,255,255,0.85);
     box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
@@ -57,6 +47,11 @@ const Splash = styled.div`
         // -webkit-background-clip: text;
         width: calc(100% - 80px);
         @media (max-width: 800px) {width: 100%;} 
+        transition: all .15s ease-in-out;
+    }
+    .chooseButton, .transcribeButton {
+
+        transition: all .15s ease-in-out;
     }
     .chooseButton {
         display: block;
@@ -65,8 +60,7 @@ const Splash = styled.div`
         text-align: center;
         text-decoration: none;
         text-transform: uppercase;
-        font-family: 'Hepta Slab',serif;
-        font-weight: 900;
+        font-size: 2rem;
         background: #000;
         color:  rgba(255,255,255,0.75);
         box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
@@ -85,6 +79,7 @@ const Splash = styled.div`
             -1px 1px 0 #000,
             1px 1px 0 #000;
     }
+
     .transcribeButton {
         display: block;
         font-family: 'Lato', sans-serif;
@@ -112,7 +107,6 @@ const Splash = styled.div`
         span {
             position: relative;
             display: inline-block;
-            font-family: 'Hepta Slab',serif;
             text-transform: uppercase;
             font-style: italic;
         }
@@ -137,38 +131,16 @@ const Splash = styled.div`
     
 `
 
-const Tester = styled.div`
-
-  
-  section.light {
-    background: #eee;
-  
-    .gradient1 {
-        display: inline-block;
-        position: relative;
-        &::before {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            
-            background: url('${cat27}');
-            pointer-events: none;
-        }
-        color: #000;
-        background: #fff;
-        mix-blend-mode: multiply;
-        &::before {
-          mix-blend-mode: screen;
-        }
-    }
-    
-  }
-  
-  
-
-`
-const CirclePanel = styled.div`
+const topFonts = [
+    'argos', 
+    'deutsche', 
+    'eltic', 
+    'foucault', 
+    'livingstone', 
+    'onciale', 
+    'ramsey', 
+    'unzialish'] 
+const CirclePanel = styled.section`
     position: absolute;
     display: flex;
     // jen's alleged disappearing circlefaces 
@@ -176,17 +148,18 @@ const CirclePanel = styled.div`
     @media (min-width: 800px) {
         justify-content: flex-start;
         flex-direction: column;
-        right: -75px;
-        top: 0;
+        left: 82.5vw;
+        top: 10vh;
     } 
     @media (max-width: 800px) {
         justify-content: space-between;
         flex-direction: row;
-        bottom: -150px;
+        bottom: 150px;
         left: 0;
     } 
 `
 const CircleImage = styled.img`
+    transition: all .15s ease-in-out;
     flex: 1;
     filter: drop-shadow(0 0 0.75rem #000);
     &:hover {
@@ -201,57 +174,90 @@ const CircleImage = styled.img`
     } 
 
 `
-const Main  = props => (
-    <div >
+const Main  = props => {
+
+    const [topFont, setTopFont ] = useState(0)
+
+    function topNext() {
+        console.log(topFonts[topFont])
+        let newIndex = (topFont + 1) > (topFonts.length - 1) ? 0 : topFont + 1
+        setTopFont(newIndex)
+    }
+    return (
+    <div css={css`
+        background: url('${cat27}');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        padding-top: 100px;
+        position: relative;
+        > div {
+            width: 75vw;
+        }
+        min-height: 100vh;
+    `} >
         <Helmet>
             <meta charSet="utf-8" />
             <title>Newberry's Nova Reperta Time Machine</title>
         </Helmet>
         <Global styles={css`
-        * {
-            transition: all .15s ease-in-out;
-        }
-        body {
-            margin: 0;
-            background: url('${cat27}');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        .pageWrapper {
-            position: relative;
-        }
+            * {
+                // transition: all .15s ease-in-out;
+            }
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+
+    @font-face { font-family: argos;        src: url(${argos}) ; }
+    @font-face { font-family: bucephalus;   src: url(${bucephalus}) ; }
+    @font-face { font-family: deutsche;     src: url(${deutsche}) ; }
+    @font-face { font-family: eltic;        src: url(${eltic}) ; }
+    @font-face { font-family: foucault;     src: url(${foucault}) ; }
+    @font-face { font-family: livingstone;  src: url(${livingstone}) ; }
+    @font-face { font-family: onciale;      src: url(${onciale}) ; }
+    @font-face { font-family: ramsey;       src: url(${ramsey}) ; }
+    @font-face { font-family: unzialish;    src: url(${unzialish}) ; }
+        .argos          { font-family: argos;       font-size: calc(4.5vw + 12px);}
+        .argos-sm       { font-family: argos;       }
+        .bucephalus     { font-family: bucephalus;  font-size: calc(4.5vw + 12px);}
+        .bucephalus-sm  { font-family: bucephalus;  }
+        .deutsche       { font-family: deutsche;    font-size: calc(7vw + 12px);}
+        .deutsche-sm    { font-family: deutsche;    }
+        .eltic          { font-family: eltic;       font-size: calc(4.5vw + 12px);}
+        .eltic-sm       { font-family: eltic;       }
+        .foucault       { font-family: foucault;    font-size: calc(6.5vw + 12px);}
+        .foucault-sm    { font-family: foucault;    }
+        .livingstone    { font-family: livingstone; font-size: calc(7vw + 12px);}
+        .livingstone-sm { font-family: livingstone; }
+        .onciale        { font-family: onciale;     font-size: calc(4.5vw + 12px);}
+        .onciale-sm     { font-family: onciale;     }
+        .ramsey         { font-family: ramsey;      font-size: calc(7vw + 12px);}
+        .ramsey-sm      { font-family: ramsey;      }
+        .unzialish      { font-family: unzialish;   font-size: calc(6vw + 12px);}
+        .unzialish-sm   { font-family: unzialish;   }
         `} />
         <Navbar location={props.location} />
         <TwitterButton />
+        <LogoJumbo topNext={topNext} font={topFonts[topFont]}/>
         <Splash>
             <div className="splashleft">
-                <Title className="upper">
-                    Nova Reperta 
-                </Title>
-                <Title className="lower">
-                    Time Machine
-                </Title>
-                <Tester>
-                    <section class="light">
-                        <h1 class="gradient1">CSS Gradient Text</h1>
-                    </section>
-                </Tester>
                 <Text className="text">
                 Travel to the Renaissance through the Newberry’s engravings, maps, and books––using the Nova Reperta print series as a guide. </Text>
                 <Text className="text">
                 A companion to the Renaissance Invention: Stradanus’s Nova Reperta,a Newberry exhibition and Northwestern University publication (2020). </Text>
-                <Link to="/choose/" className="chooseButton">Choose Your Time Traveler</Link>
+                <Link to="/choose/" className={'chooseButton ' + topFonts[topFont] + '-sm'}>Choose Your Time Traveler</Link>
                 <div className="ortext"><span>or</span></div>
                 <OutboundLink className="transcribeButton"  href="https://publications.newberry.org/digital/mms-transcribe/index" target="_blank" rel="noopener noreferrer">Unlock more stories from the past at our transcription crowdsourcing project:<br/>NEWBERRY TRANSCRIBE</OutboundLink>
             </div>
+        </Splash>
             <CirclePanel>
                 <CircleImage src={ cat1 } alt=""/>
                 <CircleImage src={ plate2 } alt=""/>
                 <CircleImage src={ plate5 } alt=""/>
                 <CircleImage src={ cat44 } alt=""/>
             </CirclePanel>
-        </Splash>
+        <Footer font={topFonts[topFont]} />
     </div>
-)
+)}
 export default Main
