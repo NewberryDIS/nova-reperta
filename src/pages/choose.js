@@ -157,14 +157,14 @@ const buttoncss = () => css`
 const Tile = ({ content }) => {
     const [ fontClass, setFontClass ] = useState('argos')
     const fonts = [
-'argos',
-'deutsche',
-'eltic',
-'foucault',
-'livingstone',
-'onciale',
-'ramsey',
-'unzialish'
+        'argos',
+        'deutsche',
+        'eltic',
+        'foucault',
+        'livingstone',
+        'onciale',
+        'ramsey',
+        'unzialish'
     ]
     function fontChanger(e){
         e.preventDefault()
@@ -255,6 +255,9 @@ const Tile = ({ content }) => {
             border: 2px solid #27452B;
             border-bottom: 2px solid transparent;
         }
+        .fontname {
+            font-size: 20px;
+        }
     `}>
         <div className="tilecap">Destination:<br />{content.dest}</div>
             <img css={css`
@@ -264,8 +267,9 @@ const Tile = ({ content }) => {
                 `} 
                 src={images[content['image']]} alt="person"/>
             <h2 className={fontClass}>{content.name}</h2>
+            <span className="fontname">font: {fontClass}</span>
             <p css={css`font-family: 'Lato', sans-serif;`}>{content.desc}</p>
-            <button onClick={e => fontChanger(e)} className={fontClass} css={buttoncss} >Begin your journey</button>
+            <button onClick={e => fontChanger(e)} className={fontClass} css={buttoncss} >Begin your Journey</button>
         </div>
     )}
 export default class Choose extends React.Component {
