@@ -96,7 +96,7 @@ export default class Navbar extends React.Component {
                                 className="navlink">
                                 &gt; Digital Newberry
                             </OutboundLink>
-                            {this.props.location.pathname !== '/' ? 
+                            {this.props.location.pathname !== '/' || this.props.location.pathname !== '/nova-reperta' ? 
                             <Link to="/" className="navlink">&gt; Nova Reperta Time Machine</Link>
                             : ''}
                         </div>

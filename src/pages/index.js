@@ -144,13 +144,13 @@ const CirclePanel = styled.section`
     position: absolute;
     display: flex;
     // jen's alleged disappearing circlefaces 
-        // flex-wrap: wrap;
-        justify-content: flex-start;
-        align-content: flex-start;
-        flex-direction: column;
-        right: 0;
-        // left: 82.5vw;
-        top: 10vh;
+    // flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-direction: column;
+    right: 0;
+    // left: 82.5vw;
+    top: 10vh;
     @media (max-width: 800px) {
         display: none;
     } 
