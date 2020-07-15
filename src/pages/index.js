@@ -162,15 +162,18 @@ const CircleImage = styled.img`
     transition: all .15s ease-in-out;
     flex: 1;
     filter: drop-shadow(0 0 0.75rem #000);
+    border: 10px solid rgba(251,251,251,0.85);;
     &:hover {
         filter: drop-shadow(0 0 1rem #000);
     }
     @media (min-width: 800px) {
-        width: 150px;
-        height: 150px;
+        border-radius: 165px;
+        width: 165px;
+        height: 165px;
     } 
     @media (max-width: 800px) {
         width: calc(100% / 5);
+        border-radius: calc(100% / 5);
     } 
 
 `

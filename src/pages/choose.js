@@ -13,7 +13,6 @@ import '../components/layout.css'
 
 
 import argos from '../fonts/Argos-Regular.ttf.woff'
-import bucephalus from '../fonts/Bucephalus.ttf.woff'
 import deutsche from '../fonts/Deutsche-Uncialis.ttf.woff'
 import eltic from '../fonts/Eltic.ttf.woff'
 import foucault from '../fonts/Foucault.ttf.woff'
@@ -21,35 +20,29 @@ import livingstone from '../fonts/Livingstone.ttf.woff'
 import onciale from '../fonts/Onciale-PhF.ttf.woff'
 import ramsey from '../fonts/Ramsey-SD.ttf.woff'
 import unzialish from '../fonts/UnZialish.ttf.woff'
+
 // // images
-// import amyWingreen from '../images/tm-amyWingreen.png';
-// import blackHawk from '../images/tm-blackHawk.png';
-// import errettGraham from '../images/tm-errettGraham.png';
-// import josephWhitehouse from '../images/tm-josephWhitehouse.png';
-// import juliaNewberry from '../images/tm-juliaNewberry.png';
-// import jhMagee from '../images/tm-jhMagee.png';
-// import eraBellThompson from '../images/tm-eraBellThompson.png';
-// import wolfej from '../images/wolfej.png';
-// import cgPearce from '../images/tm-cgPearce.png';
-// // import thx from '../images/tm-thx.png';
-// // import xmas from '../images/tm-xmas.png';
-// import raster from '../images/tm-raster.png';
-// import noone from '../images/noone.png';
-
-
-import cat1 from '../images/cat-1.png';
+import frontispiece from '../images/frontispiece.png'
+import silkworms from '../images/silkworms.png'
+import printer from '../images/printer.png'
+import america from '../images/america.png'
+import artist from '../images/artist.png'
+import alchemist from '../images/alchemist.png'
+import syphilitic from '../images/syphilitic.png'
+import miller from '../images/miller.png'
 import cat27 from '../images/cat-27.png';
-import cat44 from '../images/cat-44.png';
-import plate2 from '../images/plate-2.png';
-import plate5 from '../images/plate-5.png';
 
 let breakPoints = [350, 500, 750, 1050];
 const images = {
-    'cat1': cat1,
     'cat27': cat27,
-    'cat44': cat44,
-    'plate2': plate2,
-    'plate5': plate5,
+    'frontispiece': frontispiece, 
+    'silkworms': silkworms, 
+    'printer': printer, 
+    'america': america, 
+    'artist': artist, 
+    'alchemist': alchemist, 
+    'syphilitic': syphilitic, 
+    'miller': miller
 };
 const Masonrycontainer = styled.div`
     width: 85%;
@@ -262,11 +255,11 @@ const Tile = ({ content }) => {
         <div className="tilecap">Destination:<br />{content.dest}</div>
             <img css={css`
                     padding: 55px 25px 5px 25px;
-                    width: 150px;
+                    width: 200px;
                     filter: drop-shadow(0 0 0.75rem #000);
                 `} 
                 src={images[content['image']]} alt="person"/>
-            <h2 className={fontClass}>{content.name}</h2>
+            <h2 className={fontClass}>The {content.name}</h2>
             <span className="fontname">font: {fontClass}</span>
             <p css={css`font-family: 'Lato', sans-serif;`}>{content.desc}</p>
             <button onClick={e => fontChanger(e)} className={fontClass} css={buttoncss} >Begin your Journey</button>

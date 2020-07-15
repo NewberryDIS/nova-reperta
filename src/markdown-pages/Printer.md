@@ -1,6 +1,6 @@
 ---
 path: '/printer'
-image: 'plate2'
+image: 'printer'
 title: 'Printer'
 shorttext: ''
 text: 'Strata of cigarette smoke rose from the tiers, drifting until it struck currents set up by the blowers and the amplified breathing of the room where Case waited.'

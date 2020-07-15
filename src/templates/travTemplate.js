@@ -4,7 +4,7 @@ import { css, jsx, Global } from '@emotion/core'
 import styled from "@emotion/styled";
 import { Helmet } from "react-helmet"
 
-import Navbar from '../components/navbar';
+import Navbar from '../components/navbar-iotmw';
 
 import cat1 from '../images/cat-1.png';
 import cat27 from '../images/cat-27.png';

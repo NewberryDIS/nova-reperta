@@ -1,6 +1,6 @@
 ---
 path: '/america'
-image: 'plate5'
+image: 'america'
 title: 'America'
 shorttext: ''
 text: 'Strata of cigarette smoke rose from the tiers, drifting until it struck currents set up by the blowers and the amplified breathing of the room where Case waited.'
