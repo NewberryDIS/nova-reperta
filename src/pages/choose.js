@@ -30,11 +30,10 @@ import artist from '../images/artist.png'
 import alchemist from '../images/alchemist.png'
 import syphilitic from '../images/syphilitic.png'
 import miller from '../images/miller.png'
-import cat27 from '../images/cat-27.png';
+import background from '../images/background.png';
 
 let breakPoints = [350, 500, 750, 1050];
 const images = {
-    'cat27': cat27,
     'frontispiece': frontispiece, 
     'silkworms': silkworms, 
     'printer': printer, 
@@ -267,7 +266,7 @@ const Tile = ({ content }) => {
     )}
 export default class Choose extends React.Component {
     render() {
-        return ( <div css={css`padding-top: 65px;`}>
+        return ( <div className="choosewrapper">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Nova Reperta Time Machine</title>
@@ -275,11 +274,19 @@ export default class Choose extends React.Component {
             <Global styles={css`
                 body {
                     margin: 0;
-                    background: url('${cat27}');
+                    padding: 0;
+                    background: url('${background}');
                     background-size: cover;
                     background-position: center;
                     background-attachment: fixed;
                     position: relative;
+                }
+                .choosewrapper {
+                    padding-top: 65px;
+                    display: flex;
+                    flex-direction: column;
+                    min-height: 100vh;
+                    align-content: space-between;
                 }
             `}/>
             <Navbar location={this.props.location} />

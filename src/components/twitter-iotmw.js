@@ -11,6 +11,7 @@ const TwitterButton = () => (
         position: absolute;
         top: 12px;
         right: 10px;
+        border: 2px solid rgba(0,0,0,0); 
         &:hover {
             .twittericon img {
                 filter: drop-shadow(0 0 0.25rem white)

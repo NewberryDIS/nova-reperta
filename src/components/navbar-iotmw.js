@@ -3,12 +3,13 @@ import styled from "@emotion/styled"
 import logob from '../images/Newberry_N.svg'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
+import { Link } from 'gatsby'
 
 const Navchunk = styled.div`
     border: 2px solid transparent;
     position: relative;
     // border-radius: 8px;
-    width: 223px;
     padding-top: 9px;
     padding-left: 4px;
     font-family: 'Lato', sans-serif;
@@ -26,6 +27,7 @@ const Navchunk = styled.div`
         background: rgba(255,255,255,0.85);
         box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
         & a {
+            
             color: rgba(0,0,0,1);
         }
         &.navleft img {
@@ -48,6 +50,27 @@ const Navchunk = styled.div`
         vertical-align: middle;
         height: 100%;
     }
+    .navlink {
+        flex: 3;
+        // position: absolute;
+        // top: 0;
+        // bottom: 0;
+        // left: 70px;
+        // right: 0;
+        // height: 30%;
+        padding-left: 7px;
+        margin: auto;
+        color: rgba(0,0,0,0);
+        vertical-align: middle;
+        height: 40px;
+        font-size: 0.85rem;
+        line-height: 50px;
+        vertical-align: top;
+    }
+    .linkwrapper {
+        padding: 0 7px;
+        line-height: 50px; 
+    }
 `
 export default class Navbar extends React.Component {
     render(){
@@ -65,26 +88,17 @@ export default class Navbar extends React.Component {
                     <Navchunk onClick={this.props.handleClick} className="navleft" css={css`
                         position: relative;
                     `}>
-                        <div css={css`padding: 0 7px;`}>
-                            <a href="http://www.newberry.org"><img alt="Newberry Logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" /></a>
-                            <a href="http://www.newberry.org/digital-newberry/"
-                                css={css`
-                                    flex: 3;
-                                    position: absolute;
-                                    top: 0;
-                                    bottom: 0;
-                                    left: 70px;
-                                    right: 0;
-                                    height: 30%;
-                                    margin: auto;
-                                    color: rgba(0,0,0,0);
-                                    vertical-align: middle;
-                                    height: 40px;
-                                    font-size: 0.85rem;
-                                    line-height: 40px;
-                                `}>
+                        <div className="linkwrapper">
+                            <OutboundLink href="http://www.newberry.org">
+                                <img alt="Newberry Logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+                            </OutboundLink>
+                            <OutboundLink href="http://www.newberry.org/digital-newberry/"
+                                className="navlink">
                                 &gt; Digital Newberry
-                            </a>
+                            </OutboundLink>
+                            {this.props.location.pathname !== '/' ? 
+                            <Link to="/" className="navlink">&gt; Nova Reperta Time Machine</Link>
+                            : ''}
                         </div>
                     </Navchunk>
                 </div>

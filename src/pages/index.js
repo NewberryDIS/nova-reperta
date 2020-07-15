@@ -6,17 +6,18 @@ import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
 import Navbar from '../components/navbar-iotmw';
 import Footer from '../components/footer'
-import cat1 from '../images/cat-1.png';
-import cat27 from '../images/cat-27.png';
-import cat44 from '../images/cat-44.png';
-import plate2 from '../images/plate-2.png';
-import plate5 from '../images/plate-5.png';
+import background from '../images/background.png';
 import '../components/layout.css'
 import TwitterButton from '../components/twitter-iotmw';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import LogoJumbo from '../components/logo';
 
+
+import frontispiece from '../images/frontispiece.png'
+import silkworms from '../images/silkworms.png'
+import printer from '../images/printer.png'
+import america from '../images/america.png'
 
 import argos from '../fonts/Argos-Regular.ttf.woff'
 import bucephalus from '../fonts/Bucephalus.ttf.woff'
@@ -45,12 +46,11 @@ const Splash = styled.div`
     .splashleft {
         // -webkit-text-fill-color: transparent;
         // -webkit-background-clip: text;
-        width: calc(100% - 80px);
-        @media (max-width: 800px) {width: 100%;} 
+        // width: calc(100% - 80px);
+        // @media (max-width: 800px) {width: 100%;} 
         transition: all .15s ease-in-out;
     }
     .chooseButton, .transcribeButton {
-
         transition: all .15s ease-in-out;
     }
     .chooseButton {
@@ -144,36 +144,34 @@ const CirclePanel = styled.section`
     position: absolute;
     display: flex;
     // jen's alleged disappearing circlefaces 
-    // flex-wrap: wrap;
-    @media (min-width: 800px) {
+        // flex-wrap: wrap;
         justify-content: flex-start;
+        align-content: flex-start;
         flex-direction: column;
-        left: 82.5vw;
+        right: 0;
+        // left: 82.5vw;
         top: 10vh;
-    } 
     @media (max-width: 800px) {
-        justify-content: space-between;
-        flex-direction: row;
-        bottom: 150px;
-        left: 0;
+        display: none;
     } 
 `
 const CircleImage = styled.img`
     transition: all .15s ease-in-out;
-    flex: 1;
     filter: drop-shadow(0 0 0.75rem #000);
     border: 10px solid rgba(251,251,251,0.85);;
     &:hover {
         filter: drop-shadow(0 0 1rem #000);
     }
+    
+    border-radius: 165px;
+    width: 165px;
+    min-width: 165px;
+    height: 165px;
     @media (min-width: 800px) {
-        border-radius: 165px;
-        width: 165px;
-        height: 165px;
+        flex-wrap: nowrap;
     } 
     @media (max-width: 800px) {
-        width: calc(100% / 5);
-        border-radius: calc(100% / 5);
+        flex-wrap: wrap;
     } 
 
 `
@@ -188,7 +186,7 @@ const Main  = props => {
     }
     return (
     <div css={css`
-        background: url('${cat27}');
+        background: url('${background}');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -212,33 +210,33 @@ const Main  = props => {
                 padding: 0;
             }
 
-    @font-face { font-family: argos;        src: url(${argos}) ; }
-    @font-face { font-family: bucephalus;   src: url(${bucephalus}) ; }
-    @font-face { font-family: deutsche;     src: url(${deutsche}) ; }
-    @font-face { font-family: eltic;        src: url(${eltic}) ; }
-    @font-face { font-family: foucault;     src: url(${foucault}) ; }
-    @font-face { font-family: livingstone;  src: url(${livingstone}) ; }
-    @font-face { font-family: onciale;      src: url(${onciale}) ; }
-    @font-face { font-family: ramsey;       src: url(${ramsey}) ; }
-    @font-face { font-family: unzialish;    src: url(${unzialish}) ; }
-        .argos          { font-family: argos;       font-size: calc(4.5vw + 12px);}
-        .argos-sm       { font-family: argos;       }
-        .bucephalus     { font-family: bucephalus;  font-size: calc(4.5vw + 12px);}
-        .bucephalus-sm  { font-family: bucephalus;  }
-        .deutsche       { font-family: deutsche;    font-size: calc(7vw + 12px);}
-        .deutsche-sm    { font-family: deutsche;    }
-        .eltic          { font-family: eltic;       font-size: calc(4.5vw + 12px);}
-        .eltic-sm       { font-family: eltic;       }
-        .foucault       { font-family: foucault;    font-size: calc(6.5vw + 12px);}
-        .foucault-sm    { font-family: foucault;    }
-        .livingstone    { font-family: livingstone; font-size: calc(7vw + 12px);}
-        .livingstone-sm { font-family: livingstone; }
-        .onciale        { font-family: onciale;     font-size: calc(4.5vw + 12px);}
-        .onciale-sm     { font-family: onciale;     }
-        .ramsey         { font-family: ramsey;      font-size: calc(7vw + 12px);}
-        .ramsey-sm      { font-family: ramsey;      }
-        .unzialish      { font-family: unzialish;   font-size: calc(6vw + 12px);}
-        .unzialish-sm   { font-family: unzialish;   }
+            @font-face { font-family: argos;        src: url(${argos}) ; }
+            @font-face { font-family: bucephalus;   src: url(${bucephalus}) ; }
+            @font-face { font-family: deutsche;     src: url(${deutsche}) ; }
+            @font-face { font-family: eltic;        src: url(${eltic}) ; }
+            @font-face { font-family: foucault;     src: url(${foucault}) ; }
+            @font-face { font-family: livingstone;  src: url(${livingstone}) ; }
+            @font-face { font-family: onciale;      src: url(${onciale}) ; }
+            @font-face { font-family: ramsey;       src: url(${ramsey}) ; }
+            @font-face { font-family: unzialish;    src: url(${unzialish}) ; }
+                .argos          { font-family: argos;       font-size: calc(4.5vw + 12px);}
+                .argos-sm       { font-family: argos;       }
+                .bucephalus     { font-family: bucephalus;  font-size: calc(4.5vw + 12px);}
+                .bucephalus-sm  { font-family: bucephalus;  }
+                .deutsche       { font-family: deutsche;    font-size: calc(7vw + 12px);}
+                .deutsche-sm    { font-family: deutsche;    }
+                .eltic          { font-family: eltic;       font-size: calc(4.5vw + 12px);}
+                .eltic-sm       { font-family: eltic;       }
+                .foucault       { font-family: foucault;    font-size: calc(6.5vw + 12px);}
+                .foucault-sm    { font-family: foucault;    }
+                .livingstone    { font-family: livingstone; font-size: calc(7vw + 12px);}
+                .livingstone-sm { font-family: livingstone; }
+                .onciale        { font-family: onciale;     font-size: calc(4.5vw + 12px);}
+                .onciale-sm     { font-family: onciale;     }
+                .ramsey         { font-family: ramsey;      font-size: calc(7vw + 12px);}
+                .ramsey-sm      { font-family: ramsey;      }
+                .unzialish      { font-family: unzialish;   font-size: calc(6vw + 12px);}
+                .unzialish-sm   { font-family: unzialish;   }
         `} />
         <Navbar location={props.location} />
         <TwitterButton />
@@ -255,10 +253,10 @@ const Main  = props => {
             </div>
         </Splash>
             <CirclePanel>
-                <CircleImage src={ cat1 } alt=""/>
-                <CircleImage src={ plate2 } alt=""/>
-                <CircleImage src={ plate5 } alt=""/>
-                <CircleImage src={ cat44 } alt=""/>
+                <CircleImage src={ frontispiece } alt=""/>
+                <CircleImage src={ silkworms } alt=""/>
+                <CircleImage src={ printer } alt=""/>
+                <CircleImage src={ america } alt=""/>
             </CirclePanel>
         <Footer font={topFonts[topFont]} />
     </div>

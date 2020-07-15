@@ -62,6 +62,9 @@ export const miller = 	{
 	storymapurl: 'https://uploads.knightlab.com/storymapjs/f16f101e1b9e4f19898b53b294e8d1dd/novrep-miller/index.html',
 	dest: '1990-1998'
 }
+// export const Travelers = [ 
+// 	syphilitic, miller
+// ]
 export const Travelers = [ 
 	frontispiece, silkworms, printer, america, artist, alchemist, syphilitic, miller
 ]
