@@ -258,7 +258,7 @@ const Tile = ({ content }) => {
                     filter: drop-shadow(0 0 0.75rem #000);
                 `} 
                 src={images[content['image']]} alt="person"/>
-            <h2 className={fontClass}>The {content.name}</h2>
+            <h2 className={fontClass}>{content.name}</h2>
             <span className="fontname">font: {fontClass}</span>
             <p css={css`font-family: 'Lato', sans-serif;`}>{content.desc}</p>
             <button onClick={e => fontChanger(e)} className={fontClass} css={buttoncss} >Begin your Journey</button>

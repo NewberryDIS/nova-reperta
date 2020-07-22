@@ -14,10 +14,10 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import LogoJumbo from '../components/logo';
 
 
-import frontispiece from '../images/frontispiece.png'
-import silkworms from '../images/silkworms.png'
-import printer from '../images/printer.png'
-import america from '../images/america.png'
+import frontispiece from '../images/frontispiece-c.png'
+import silkworms from '../images/silkworms-c.png'
+import printer from '../images/printer-c.png'
+import america from '../images/america-c.png'
 
 import argos from '../fonts/Argos-Regular.ttf.woff'
 import bucephalus from '../fonts/Bucephalus.ttf.woff'
@@ -34,6 +34,20 @@ const Text  = styled.div`
     font-family: 'Lato', sans-serif;
     font-size: calc(1vw + 15px);
     padding: 15px 30px ;
+    a {
+        color: black;
+        font-weight: 900;
+        text-decoration: none;
+        // background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75));
+        background-image: linear-gradient(to bottom, transparent 1px, black 2px); 
+        background-position: 0% 105%;
+        background-repeat: no-repeat;
+        background-size: 0% 2px;
+        transition: background-size .2s;
+        &:hover {
+                background-size: 100% 5px;
+        }
+    }
 `
 const Splash = styled.div`
     margin: 5vh auto;
@@ -148,7 +162,7 @@ const CirclePanel = styled.section`
     justify-content: flex-start;
     align-content: flex-start;
     flex-direction: column;
-    right: 0;
+    right: 15vw;
     // left: 82.5vw;
     top: 10vh;
     @media (max-width: 800px) {
@@ -163,10 +177,10 @@ const CircleImage = styled.img`
         filter: drop-shadow(0 0 1rem #000);
     }
     
-    border-radius: 165px;
-    width: 165px;
-    min-width: 165px;
-    height: 165px;
+    border-radius: 15vmin;
+    width: 15vmin;
+    min-width: 15vmin;
+    height: 15vmin;
     @media (min-width: 800px) {
         flex-wrap: nowrap;
     } 
@@ -193,7 +207,7 @@ const Main  = props => {
         padding-top: 100px;
         position: relative;
         > div {
-            width: 75vw;
+            width: 60vw;
         }
         min-height: 100vh;
     `} >
@@ -244,12 +258,17 @@ const Main  = props => {
         <Splash>
             <div className="splashleft">
                 <Text className="text">
-                Travel to the Renaissance through the Newberry’s engravings, maps, and books––using the Nova Reperta print series as a guide. </Text>
+                    Travel to the Renaissance through the Newberry’s engravings, maps, and books––using the Nova Reperta print series as a guide.
+                </Text>
                 <Text className="text">
-                A companion to the Renaissance Invention: Stradanus’s Nova Reperta,a Newberry exhibition and Northwestern University publication (2020). </Text>
+                    A companion to Renaissance Invention: Stradanus’s Nova Reperta, a <OutboundLink href="https://www.newberry.org/renaissance-invention"  target="_blank" rel="noopener noreferrer">Newberry exhibition</OutboundLink> and <OutboundLink href="https://nupress.northwestern.edu/content/renaissance-invention"  target="_blank" rel="noopener noreferrer">Northwestern University publication</OutboundLink>.
+                </Text>
                 <Link to="/choose/" className={'chooseButton ' + topFonts[topFont] + '-sm'}>Choose Your Time Traveler</Link>
                 <div className="ortext"><span>or</span></div>
-                <OutboundLink className="transcribeButton"  href="https://publications.newberry.org/digital/mms-transcribe/index" target="_blank" rel="noopener noreferrer">Unlock more stories from the past at our transcription crowdsourcing project:<br/>NEWBERRY TRANSCRIBE</OutboundLink>
+                <OutboundLink className="transcribeButton"  href="https://archive.org/details/case_wing_z_412_85/page/n17/mode/2up" target="_blank" rel="noopener noreferrer">
+                    Explore the full print series at our digital library
+                    Unlock more stories from the past at our transcription crowdsourcing project:<br/>NEWBERRY TRANSCRIBE
+                </OutboundLink>
             </div>
         </Splash>
             <CirclePanel>

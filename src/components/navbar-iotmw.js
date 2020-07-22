@@ -10,8 +10,7 @@ const Navchunk = styled.div`
     border: 2px solid transparent;
     position: relative;
     // border-radius: 8px;
-    padding-top: 9px;
-    padding-left: 4px;
+    padding: 9px 7px 0 4px;
     font-family: 'Lato', sans-serif;
     display: flex;
     transition: all .15s ease-in-out;
@@ -94,9 +93,9 @@ export default class Navbar extends React.Component {
                             </OutboundLink>
                             <OutboundLink href="http://www.newberry.org/digital-newberry/"
                                 className="navlink">
-                                &gt; Digital Newberry
+                                &gt; Digital Newberry {console.log(this.props.location.pathname)}
                             </OutboundLink>
-                            {this.props.location.pathname !== '/' || this.props.location.pathname !== '/nova-reperta' ? 
+                            {this.props.location.pathname !== '/' && this.props.location.pathname !== '/nova-reperta/' ? 
                             <Link to="/" className="navlink">&gt; Nova Reperta Time Machine</Link>
                             : ''}
                         </div>
