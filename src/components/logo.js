@@ -16,7 +16,7 @@ const btmFonts = ["bottomone","bottomtwo"]
 
 const LogoJumbo = props => {
     return (
-        <Fonter onClick={props.topNext}><div className="mainbox">
+        <Fonter ><div className="mainbox">
 
             <h1 className={props.font}>Nova Reperta</h1>
             <h2 >Time Machine</h2>

@@ -11,33 +11,25 @@ import TwitterButton from '../components/twitter-iotmw';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import '../components/layout.css'
 
-
 import argos from '../fonts/Argos-Regular.ttf.woff'
-import deutsche from '../fonts/Deutsche-Uncialis.ttf.woff'
-import eltic from '../fonts/Eltic.ttf.woff'
-import foucault from '../fonts/Foucault.ttf.woff'
-import livingstone from '../fonts/Livingstone.ttf.woff'
-import onciale from '../fonts/Onciale-PhF.ttf.woff'
-import ramsey from '../fonts/Ramsey-SD.ttf.woff'
-import unzialish from '../fonts/UnZialish.ttf.woff'
 
 // // images
-import frontispiece from '../images/frontispiece.png'
+import designers from '../images/designers.png'
 import silkworms from '../images/silkworms.png'
 import printer from '../images/printer.png'
-import america from '../images/america.png'
+import indigenouswoman from '../images/indigenouswoman.png'
 import artist from '../images/artist.png'
 import alchemist from '../images/alchemist.png'
 import syphilitic from '../images/syphilitic.png'
 import miller from '../images/miller.png'
 import background from '../images/background.png';
 
-let breakPoints = [350, 500, 750, 1050];
+let breakPoints = [350, 500, 750];
 const images = {
-    'frontispiece': frontispiece, 
+    'designers': designers, 
     'silkworms': silkworms, 
     'printer': printer, 
-    'america': america, 
+    'indigenouswoman': indigenouswoman, 
     'artist': artist, 
     'alchemist': alchemist, 
     'syphilitic': syphilitic, 
@@ -83,7 +75,7 @@ class Masonry extends React.Component {
     getColumns(w) {
         return breakPoints.reduceRight((p, c, i) => {
             return c < w ? p : i;
-        }, breakPoints.length) + 1;
+        }, breakPoints.length) +1;
     }
     onResize() {
         const columns = this.getColumns(this.refs.Masonry.offsetWidth);
@@ -147,43 +139,12 @@ const buttoncss = () => css`
 `
 
 const Tile = ({ content }) => {
-    const [ fontClass, setFontClass ] = useState('argos')
-    const fonts = [
-        'argos',
-        'deutsche',
-        'eltic',
-        'foucault',
-        'livingstone',
-        'onciale',
-        'ramsey',
-        'unzialish'
-    ]
-    function fontChanger(e){
-        e.preventDefault()
-        let newIndex = fonts.indexOf(fontClass) + 1 > fonts.length - 1 ? 0 : fonts.indexOf(fontClass) + 1
-        console.log(fonts[newIndex])
-        setFontClass(fonts[newIndex])
-    }
     return (
     <div className="tile" css={css`
     * {text-decoration: none;}
 
-    @font-face { font-family: argos;        src: url(${argos}) ; }
-    @font-face { font-family: deutsche;     src: url(${deutsche}) ; }
-    @font-face { font-family: eltic;        src: url(${eltic}) ; }
-    @font-face { font-family: foucault;     src: url(${foucault}) ; }
-    @font-face { font-family: livingstone;  src: url(${livingstone}) ; }
-    @font-face { font-family: onciale;      src: url(${onciale}) ; }
-    @font-face { font-family: ramsey;       src: url(${ramsey}) ; }
-    @font-face { font-family: unzialish;    src: url(${unzialish}) ; }
-        .argos       { font-family: argos;       }
-        .deutsche    { font-family: deutsche;    }
-        .eltic       { font-family: eltic;       }
-        .foucault    { font-family: foucault;    }
-        .livingstone { font-family: livingstone; }
-        .onciale     { font-family: onciale;     }
-        .ramsey      { font-family: ramsey;      }
-        .unzialish   { font-family: unzialish;   }
+    @font-face { font-family: argos;     src: url(${argos}) ; }
+        .argos    { font-family: argos;    }
         text-decoration: none;
         display: block;           
         border: 2px solid rgba(0,0,0,1); 
@@ -195,7 +156,7 @@ const Tile = ({ content }) => {
         margin: 4px;
         border: 2px solid #27452B;
         flex-basis: 200px;
-        padding: 10px 10px 25px 10px;
+        padding: 10px;
         position: relative;
         transition: all .15s ease-in-out;
         & p {
@@ -251,17 +212,15 @@ const Tile = ({ content }) => {
             font-size: 20px;
         }
     `}>
-        <div className="tilecap">Destination:<br />{content.dest}</div>
             <img css={css`
-                    padding: 55px 25px 5px 25px;
+                    padding: 5 25px 5px 25px;
                     width: 200px;
                     filter: drop-shadow(0 0 0.75rem #000);
                 `} 
                 src={images[content['image']]} alt="person"/>
-            <h2 className={fontClass}>{content.name}</h2>
-            <span className="fontname">font: {fontClass}</span>
+            <h2 className='argos'>{content.name}</h2>
             <p css={css`font-family: 'Lato', sans-serif;`}>{content.desc}</p>
-            <button onClick={e => fontChanger(e)} className={fontClass} css={buttoncss} >Begin your Journey</button>
+            <button  className='argos' css={buttoncss} >Start Exploring</button>
         </div>
     )}
 export default class Choose extends React.Component {

@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
 import Navbar from '../components/navbar-iotmw';
-import Footer from '../components/footer'
+// import Footer from '../components/footer'
 import background from '../images/background.png';
 import '../components/layout.css'
 import TwitterButton from '../components/twitter-iotmw';
@@ -14,10 +14,10 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import LogoJumbo from '../components/logo';
 
 
-import frontispiece from '../images/frontispiece-c.png'
+import designers from '../images/designers-c.png'
 import silkworms from '../images/silkworms-c.png'
 import printer from '../images/printer-c.png'
-import america from '../images/america-c.png'
+import indigenouswoman from '../images/indigenouswoman-c.png'
 
 import argos from '../fonts/Argos-Regular.ttf.woff'
 import bucephalus from '../fonts/Bucephalus.ttf.woff'
@@ -191,13 +191,6 @@ const CircleImage = styled.img`
 `
 const Main  = props => {
 
-    const [topFont, setTopFont ] = useState(0)
-
-    function topNext() {
-        console.log(topFonts[topFont])
-        let newIndex = (topFont + 1) > (topFonts.length - 1) ? 0 : topFont + 1
-        setTopFont(newIndex)
-    }
     return (
     <div css={css`
         background: url('${background}');
@@ -254,30 +247,28 @@ const Main  = props => {
         `} />
         <Navbar location={props.location} />
         <TwitterButton />
-        <LogoJumbo topNext={topNext} font={topFonts[topFont]}/>
+        <LogoJumbo font={'foucault'}/>
         <Splash>
             <div className="splashleft">
                 <Text className="text">
-                    Travel to the Renaissance through the Newberry’s engravings, maps, and books––using the Nova Reperta print series as a guide.
+                    Travel to the Renaissance through the Newberry’s engravings, maps, and books&mdash;using the Nova Reperta print series as a guide.
                 </Text>
                 <Text className="text">
                     A companion to Renaissance Invention: Stradanus’s Nova Reperta, a <OutboundLink href="https://www.newberry.org/renaissance-invention"  target="_blank" rel="noopener noreferrer">Newberry exhibition</OutboundLink> and <OutboundLink href="https://nupress.northwestern.edu/content/renaissance-invention"  target="_blank" rel="noopener noreferrer">Northwestern University publication</OutboundLink>.
                 </Text>
-                <Link to="/choose/" className={'chooseButton ' + topFonts[topFont] + '-sm'}>Choose Your Time Traveler</Link>
+                <Link to="/choose/" className={'chooseButton foucault-sm'}>Choose Your Time Traveler</Link>
                 <div className="ortext"><span>or</span></div>
                 <OutboundLink className="transcribeButton"  href="https://archive.org/details/case_wing_z_412_85/page/n17/mode/2up" target="_blank" rel="noopener noreferrer">
                     Explore the full print series at our digital library
-                    Unlock more stories from the past at our transcription crowdsourcing project:<br/>NEWBERRY TRANSCRIBE
                 </OutboundLink>
             </div>
         </Splash>
             <CirclePanel>
-                <CircleImage src={ frontispiece } alt=""/>
+                <CircleImage src={ designers } alt=""/>
                 <CircleImage src={ silkworms } alt=""/>
                 <CircleImage src={ printer } alt=""/>
-                <CircleImage src={ america } alt=""/>
+                <CircleImage src={ indigenouswoman } alt=""/>
             </CirclePanel>
-        <Footer font={topFonts[topFont]} />
     </div>
 )}
 export default Main
