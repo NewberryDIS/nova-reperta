@@ -13,25 +13,14 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import LogoJumbo from '../components/logo';
 
-
 import designers from '../images/designers-c.png'
 import silkworms from '../images/silkworms-c.png'
 import printer from '../images/printer-c.png'
 import indigenouswoman from '../images/indigenouswoman-c.png'
 
-import argos from '../fonts/Argos-Regular.ttf.woff'
-import bucephalus from '../fonts/Bucephalus.ttf.woff'
-import deutsche from '../fonts/Deutsche-Uncialis.ttf.woff'
-import eltic from '../fonts/Eltic.ttf.woff'
-import foucault from '../fonts/Foucault.ttf.woff'
-import livingstone from '../fonts/Livingstone.ttf.woff'
-import onciale from '../fonts/Onciale-PhF.ttf.woff'
-import ramsey from '../fonts/Ramsey-SD.ttf.woff'
-import unzialish from '../fonts/UnZialish.ttf.woff'
-
-
 const Text  = styled.div`
-    font-family: 'Lato', sans-serif;
+    // font-family: 'Lato', sans-serif;
+    font-family: 'Alegreya SC', serif;
     font-size: calc(1vw + 15px);
     padding: 15px 30px ;
     a {
@@ -66,12 +55,15 @@ const Splash = styled.div`
     }
     .chooseButton, .transcribeButton {
         transition: all .15s ease-in-out;
+        font-family: 'Cinzel', serif;
+        font-weight: 700;
     }
     .chooseButton {
         display: block;
         margin: 15px auto;
         padding: 13px 20px;
         text-align: center;
+
         text-decoration: none;
         text-transform: uppercase;
         font-size: 2rem;
@@ -96,7 +88,6 @@ const Splash = styled.div`
 
     .transcribeButton {
         display: block;
-        font-family: 'Lato', sans-serif;
         font-size: 1rem;
         color: black;
         text-decoration: none;
@@ -145,15 +136,6 @@ const Splash = styled.div`
     
 `
 
-const topFonts = [
-    'argos', 
-    'deutsche', 
-    'eltic', 
-    'foucault', 
-    'livingstone', 
-    'onciale', 
-    'ramsey', 
-    'unzialish'] 
 const CirclePanel = styled.section`
     position: absolute;
     display: flex;
@@ -217,33 +199,6 @@ const Main  = props => {
                 padding: 0;
             }
 
-            @font-face { font-family: argos;        src: url(${argos}) ; }
-            @font-face { font-family: bucephalus;   src: url(${bucephalus}) ; }
-            @font-face { font-family: deutsche;     src: url(${deutsche}) ; }
-            @font-face { font-family: eltic;        src: url(${eltic}) ; }
-            @font-face { font-family: foucault;     src: url(${foucault}) ; }
-            @font-face { font-family: livingstone;  src: url(${livingstone}) ; }
-            @font-face { font-family: onciale;      src: url(${onciale}) ; }
-            @font-face { font-family: ramsey;       src: url(${ramsey}) ; }
-            @font-face { font-family: unzialish;    src: url(${unzialish}) ; }
-                .argos          { font-family: argos;       font-size: calc(4.5vw + 12px);}
-                .argos-sm       { font-family: argos;       }
-                .bucephalus     { font-family: bucephalus;  font-size: calc(4.5vw + 12px);}
-                .bucephalus-sm  { font-family: bucephalus;  }
-                .deutsche       { font-family: deutsche;    font-size: calc(7vw + 12px);}
-                .deutsche-sm    { font-family: deutsche;    }
-                .eltic          { font-family: eltic;       font-size: calc(4.5vw + 12px);}
-                .eltic-sm       { font-family: eltic;       }
-                .foucault       { font-family: foucault;    font-size: calc(6.5vw + 12px);}
-                .foucault-sm    { font-family: foucault;    }
-                .livingstone    { font-family: livingstone; font-size: calc(7vw + 12px);}
-                .livingstone-sm { font-family: livingstone; }
-                .onciale        { font-family: onciale;     font-size: calc(4.5vw + 12px);}
-                .onciale-sm     { font-family: onciale;     }
-                .ramsey         { font-family: ramsey;      font-size: calc(7vw + 12px);}
-                .ramsey-sm      { font-family: ramsey;      }
-                .unzialish      { font-family: unzialish;   font-size: calc(6vw + 12px);}
-                .unzialish-sm   { font-family: unzialish;   }
         `} />
         <Navbar location={props.location} />
         <TwitterButton />
@@ -256,7 +211,7 @@ const Main  = props => {
                 <Text className="text">
                     A companion to Renaissance Invention: Stradanus’s Nova Reperta, a <OutboundLink href="https://www.newberry.org/renaissance-invention"  target="_blank" rel="noopener noreferrer">Newberry exhibition</OutboundLink> and <OutboundLink href="https://nupress.northwestern.edu/content/renaissance-invention"  target="_blank" rel="noopener noreferrer">Northwestern University publication</OutboundLink>.
                 </Text>
-                <Link to="/choose/" className={'chooseButton foucault-sm'}>Choose Your Time Traveler</Link>
+                <Link to="/choose/" className='chooseButton'>Choose Your Time Traveler</Link>
                 <div className="ortext"><span>or</span></div>
                 <OutboundLink className="transcribeButton"  href="https://archive.org/details/case_wing_z_412_85/page/n17/mode/2up" target="_blank" rel="noopener noreferrer">
                     Explore the full print series at our digital library

@@ -2,7 +2,7 @@ export const designers = 		{
 	image: 'designers',
 	id: 'designers',
 	name: 'Designers',
-	desc: 'Collaborate on designs for engraving so your artistic inventions can go viral!',
+	desc: 'Collaborate on designs for engraving so your artistic inventions can go viral.',
 	storymapurl: 'https://uploads.knightlab.com/storymapjs/f16f101e1b9e4f19898b53b294e8d1dd/novrep-frontis/index.html',
 	dest: '1990-1998'
 }
@@ -50,7 +50,7 @@ export const miller = 	{
 	image: 'miller',
 	id: 'miller',
 	name: 'Miller',
-	desc: 'Help keep your breadbaskets full and armor polished through the power of wheels!',
+	desc: 'Help keep your breadbaskets full and armor polished through the power of wheels.',
 	storymapurl: 'https://uploads.knightlab.com/storymapjs/f16f101e1b9e4f19898b53b294e8d1dd/novrep-miller/index.html',
 	dest: '1990-1998'
 }
@@ -58,7 +58,7 @@ export const artist = 	{
 	image: 'artist',
 	id: 'artist',
 	name: 'Artist',
-	desc: 'Preside over a teeming workshop of apprentices and draw and paint your heart out!',
+	desc: 'Preside over a teeming workshop of apprentices and draw and paint your heart out.',
 	storymapurl: 'https://uploads.knightlab.com/storymapjs/f16f101e1b9e4f19898b53b294e8d1dd/novrep-artist/index.html',
 	dest: '1990-1998'
 }

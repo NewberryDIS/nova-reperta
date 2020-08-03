@@ -64,11 +64,11 @@ const Leftpanel = ( props ) => (
     `}>
         <div css={css`width: 80%; margin: 15% auto; flex-grow: 1;`} >
             <img css={css`display: block; margin: auto; max-width: 150px; filter: drop-shadow(0 0 0.25rem black);`} src={images[props.image]} alt="" />
-            <p css={css`padding-top: 35px; font-size: calc(12px + 1vw); line-height: 2.25rem;font-family: 'Hepta Slab',serif; text-align: center;`} >{props.title}</p>
+            <p css={css`padding-top: 35px; font-size: calc(12px + 1vw); line-height: 2.25rem;font-family: 'Alegreya SC', serif; text-align: center;`} >{props.title}</p>
         <Link css={css`
                 margin: 20px auto;
-                font-family: 'Hepta Slab',serif;
-                font-weight: 100;
+                font-family: 'Cinzel', serif;
+                font-weight: 700;
                 font-size: calc(10px + 0.5vw);
                 color: white;
                 display: block;
@@ -110,7 +110,6 @@ export default function Template({
                 <title>Newberry's Midwest Time Machine</title>
             </Helmet>
             <Global styles={css`
-                @import url('https://fonts.googleapis.com/css?family=Bitter|Lato:100i,300i,400|Libre+Baskerville|BioRhyme:700|Hepta+Slab:400,700|Ultra:400,700&display=swap');
                 * {
                     transition: all .15s ease-in-out;
                 }

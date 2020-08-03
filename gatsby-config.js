@@ -48,22 +48,13 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Lato`,
-            variants: [`100i`,`300i`,`400`]
-          },
-          {
-            family: `EB Garamond`,
-            variants: [`700`]
-          }, 
-          {
-            family: `Ultra`,
+            family: `Alegreya SC`,
             variants: [`400`, `700`]
           },
-          { family: 'IM Fell DW Pica SC' },
-          { family: 'Old Standard TT' },
-          { family: 'Cormorant Upright' },
-          { family: 'Goudy Bookletter 1911' },
-          { family: 'Uncial Antiqua' },
+          {
+            family: `Cinzel`,
+            variants: [`400`, `700`]
+          },
         ],
       },
     }

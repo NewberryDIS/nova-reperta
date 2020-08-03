@@ -11,8 +11,6 @@ import TwitterButton from '../components/twitter-iotmw';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import '../components/layout.css'
 
-import argos from '../fonts/Argos-Regular.ttf.woff'
-
 // // images
 import designers from '../images/designers.png'
 import silkworms from '../images/silkworms.png'
@@ -118,11 +116,12 @@ const buttoncss = () => css`
     margin: 15px auto;
     background: rgba(0,0,0,1);;
     color:  rgba(255,255,255,0.75);
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
     // font-family: eltic, serif;   
     font-size: 1rem;
     border: 1px solid transparent;
     text-transform: uppercase;
-    // font-weight: 900;
     -webkit-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
@@ -143,8 +142,6 @@ const Tile = ({ content }) => {
     <div className="tile" css={css`
     * {text-decoration: none;}
 
-    @font-face { font-family: argos;     src: url(${argos}) ; }
-        .argos    { font-family: argos;    }
         text-decoration: none;
         display: block;           
         border: 2px solid rgba(0,0,0,1); 
@@ -187,29 +184,13 @@ const Tile = ({ content }) => {
             padding: 0;
             margin: 0;
             overflow-wrap: normal;
-        }
-        & .tilecap, .tilecapSeasonal {
-            font-family: 'Lato', sans-serif;
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            font-weight: 700;
-            // border-radius: 6px 6px 0 0;
-            color: rgba(255,255,255,0.75);
-        }
-        & .tilecap {
-            border: 2px solid #27452B;
-            border-bottom: 2px solid transparent;
-        }
-        & .tilecapSeasonal {
-            color: white;
-            line-height: 52px;
-            border: 2px solid #27452B;
-            border-bottom: 2px solid transparent;
+            font-family: 'Cinzel', serif;
         }
         .fontname {
-            font-size: 20px;
+        }
+        .desctext {
+            font-size: 18px;
+            font-family: 'Alegreya SC', serif;
         }
     `}>
             <img css={css`
@@ -218,9 +199,9 @@ const Tile = ({ content }) => {
                     filter: drop-shadow(0 0 0.75rem #000);
                 `} 
                 src={images[content['image']]} alt="person"/>
-            <h2 className='argos'>{content.name}</h2>
-            <p css={css`font-family: 'Lato', sans-serif;`}>{content.desc}</p>
-            <button  className='argos' css={buttoncss} >Start Exploring</button>
+            <h2>{content.name}</h2>
+            <p className="desctext">{content.desc}</p>
+            <button css={buttoncss} >Start Exploring</button>
         </div>
     )}
 export default class Choose extends React.Component {
