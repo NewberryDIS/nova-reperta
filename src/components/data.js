@@ -1,4 +1,4 @@
-export const designers = 		{
+export const designers = {
 	image: 'designers',
 	id: 'designers',
 	name: 'Designers',
@@ -6,15 +6,15 @@ export const designers = 		{
 	storymapurl: 'https://uploads.knightlab.com/storymapjs/f16f101e1b9e4f19898b53b294e8d1dd/novrep-frontis/index.html',
 	dest: '1990-1998'
 }
-export const silkworms = 		{
+export const silkworms = {
 	image: 'silkworms',
 	id: 'silkworms',
-	name: 'Silkworms',
+	name: 'Silkworms', 
 	desc: 'Like luxurious silk? Learn about the life of the silkworms that still make it for you.',
 	storymapurl: 'https://uploads.knightlab.com/storymapjs/f16f101e1b9e4f19898b53b294e8d1dd/novrep-vermis/index.html',
 	dest: '1990-1998'
 }
-export const printer = 	{
+export const printer = {
 	image: 'printer',
 	id: 'printer',
 	name: 'Printer',
@@ -22,7 +22,7 @@ export const printer = 	{
 	storymapurl: 'https://uploads.knightlab.com/storymapjs/f16f101e1b9e4f19898b53b294e8d1dd/novrep-printer/index.html ',
 	dest: '1990-1998'
 }
-export const indigenouswoman = 	{
+export const indigenouswoman = {
 	image: 'indigenouswoman',
 	id: 'indigenouswoman',
 	name: 'Indigenous Woman',
@@ -30,7 +30,7 @@ export const indigenouswoman = 	{
 	storymapurl: 'https://uploads.knightlab.com/storymapjs/f16f101e1b9e4f19898b53b294e8d1dd/novrep-america/index.html',
 	dest: '1990-1998'
 }
-export const alchemist = 	{
+export const alchemist = {
 	image: 'alchemist',
 	id: 'alchemist',
 	name: 'Alchemist',
@@ -38,7 +38,7 @@ export const alchemist = 	{
 	storymapurl: 'https://uploads.knightlab.com/storymapjs/f16f101e1b9e4f19898b53b294e8d1dd/novrep-alchemist/index.html',
 	dest: '1990-1998'
 }
-export const syphilitic = 	{
+export const syphilitic = {
 	image: 'syphilitic',
 	id: 'syphiliticpatient',
 	name: 'Syphilitic Patient',
@@ -46,7 +46,7 @@ export const syphilitic = 	{
 	storymapurl: 'https://uploads.knightlab.com/storymapjs/f16f101e1b9e4f19898b53b294e8d1dd/novrep-syphilitic/index.html',
 	dest: '1990-1998'
 }
-export const miller = 	{
+export const miller = {
 	image: 'miller',
 	id: 'miller',
 	name: 'Miller',
@@ -54,7 +54,7 @@ export const miller = 	{
 	storymapurl: 'https://uploads.knightlab.com/storymapjs/f16f101e1b9e4f19898b53b294e8d1dd/novrep-miller/index.html',
 	dest: '1990-1998'
 }
-export const artist = 	{
+export const artist = {
 	image: 'artist',
 	id: 'artist',
 	name: 'Artist',
@@ -62,9 +62,6 @@ export const artist = 	{
 	storymapurl: 'https://uploads.knightlab.com/storymapjs/f16f101e1b9e4f19898b53b294e8d1dd/novrep-artist/index.html',
 	dest: '1990-1998'
 }
-// export const Travelers = [ 
-// 	syphilitic, miller
-// ]
 export const Travelers = [ 
 	designers, silkworms, printer, indigenouswoman, alchemist, syphilitic, miller, artist
 ]

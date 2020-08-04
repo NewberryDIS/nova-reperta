@@ -8,7 +8,7 @@ const TwitterButton = () => (
     <p className="wrapper" css={css`
         width: 60px;
         height: 60px;
-        position: absolute;
+        position: fixed;
         top: 12px;
         right: 10px;
         border: 2px solid rgba(0,0,0,0); 
