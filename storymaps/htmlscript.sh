@@ -1,5 +1,5 @@
 #!/bin/bash
-nameArray=(amyWingreen blackHawk cgPearce eraBellThompson errettGraham jhMagee josephWhitehouse juliaNewberry raster thx xmas)
+nameArray=(designers silkworms printer indigenouswoman alchemist syphilitic miller artist)
 for n in "${nameArray[@]}"
 do
     touch $n.html

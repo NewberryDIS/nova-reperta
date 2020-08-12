@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
 import Navbar from '../components/navbar-iotmw';
 // import Footer from '../components/footer'
-import background from '../images/background.png';
+import background from '../images/background.jpg';
 import '../components/layout.css'
 import TwitterButton from '../components/twitter-iotmw';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
@@ -22,7 +22,8 @@ const Text  = styled.div`
     // font-family: 'Lato', sans-serif;
     font-family: 'Alegreya SC', serif;
     font-size: calc(1vw + 15px);
-    padding: 15px 30px ;
+    @media (min-width: 800px) { padding: 15px 30px; } 
+    @media (max-width: 800px) { padding: 10px; } 
     a {
         color: black;
         font-weight: 900;
@@ -40,7 +41,8 @@ const Text  = styled.div`
 `
 const Splash = styled.div`
     margin: 5vh auto;
-    padding: 30px;
+    @media (min-width: 800px) { padding: 30px; } 
+    @media (max-width: 800px) { padding: 10px; } 
     // border-radius: 3px;                        
     border: 2px solid rgba(0,0,0,1); 
     background: rgba(255,255,255,0.85);
@@ -57,11 +59,12 @@ const Splash = styled.div`
         transition: all .15s ease-in-out;
         font-family: 'Cinzel', serif;
         font-weight: 700;
+        @media (min-width: 800px) { padding: 15px 30px; } 
+        @media (max-width: 800px) { padding: 10px; } 
     }
     .chooseButton {
         display: block;
         margin: 15px auto;
-        padding: 13px 20px;
         text-align: center;
 
         text-decoration: none;
@@ -91,7 +94,6 @@ const Splash = styled.div`
         font-size: 1rem;
         color: black;
         text-decoration: none;
-        padding: 15px 30px ;
         border: 1px solid rgba(0,0,0, 0.5);
         &:hover {
             border: 1px solid #000;
@@ -188,7 +190,7 @@ const Main  = props => {
     `} >
         <Helmet>
             <meta charSet="utf-8" />
-            <title>Newberry's Nova Reperta Time Machine</title>
+            <title>Nova Reperta Time Machine</title>
         </Helmet>
         <Global styles={css`
             * {

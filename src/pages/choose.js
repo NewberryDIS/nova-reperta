@@ -20,7 +20,7 @@ import artist from '../images/artist.png'
 import alchemist from '../images/alchemist.png'
 import syphilitic from '../images/syphilitic.png'
 import miller from '../images/miller.png'
-import background from '../images/background.png';
+import background from '../images/background.jpg';
 
 let breakPoints = [350, 500, 750];
 const images = {

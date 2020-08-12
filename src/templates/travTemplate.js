@@ -6,34 +6,24 @@ import { Helmet } from "react-helmet"
 
 import Navbar from '../components/navbar-iotmw';
 
-import cat1 from '../images/cat-1.png';
-import cat27 from '../images/cat-27.png';
-import cat44 from '../images/cat-44.png';
-import plate2 from '../images/plate-2.png';
-import plate5 from '../images/plate-5.png';
-
-// const colors = {
-//     green: {
-//         dark: '#27452B',
-//         darkrgba: '39,69,43', 
-//         light: '#D6D7B5',
-//         lightrgba: '214,215,181'
-//     },
-//     bandw: {
-//         dark: '#000',
-//         darkrgba: '0,0,0', 
-//         light: '#fff',
-//         lightrgba: '255,255,255'
-//     }
-// }
+import designers from '../images/designers.png'
+import silkworms from '../images/silkworms.png'
+import printer from '../images/printer.png'
+import indigenouswoman from '../images/indigenouswoman.png'
+import alchemist from '../images/alchemist.png'
+import syphilitic from '../images/syphilitic.png'
+import miller from '../images/miller.png'
+import artist from '../images/artist.png'
 
 const images = {
-
-'cat1': cat1,
-'cat27': cat27,
-'cat44': cat44,
-'plate2': plate2,
-'plate5': plate5
+    'designers': designers,
+    'silkworms': silkworms,
+    'printer': printer,
+    'indigenouswoman': indigenouswoman,
+    'alchemist': alchemist,
+    'syphilitic': syphilitic,
+    'miller': miller,
+    'artist': artist
 }
 const Maparea = styled.div` 
     position: sticky;
@@ -98,7 +88,6 @@ export default function Template({
     }) {
     const { markdownRemark } = data // data.markdownRemark holds our post data
     const { frontmatter } = markdownRemark
-
     return (
         <div css={css`
             display: flex;
@@ -107,7 +96,7 @@ export default function Template({
         <Navbar location={location} />
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Newberry's Midwest Time Machine</title>
+                <title>Nova Reperta Time Machine</title>
             </Helmet>
             <Global styles={css`
                 * {
@@ -119,8 +108,7 @@ export default function Template({
             `} />
             <Leftpanel image={frontmatter.image} text={frontmatter.shorttext} title={frontmatter.title} />
             <Maparea>
-                <iframe title={frontmatter.image} src={frontmatter.storymapurl}
-                // <iframe title={frontmatter.image} src={'/static/' + frontmatter.image + '.html'}
+                <iframe title={frontmatter.image} src={'/nova-reperta/static/' + frontmatter.image + '.html'}
                     css={css`
                         width: 100%;
                         height: 100%;

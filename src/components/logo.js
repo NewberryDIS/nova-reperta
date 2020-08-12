@@ -6,7 +6,7 @@ import styled from "@emotion/styled";
 const LogoJumbo = props => {
     return (
         <Fonter ><div className="mainbox">
-            <h1 className={props.font}>Nova Reperta</h1>
+            <h1 >Nova Reperta</h1>
             <h2 >Time Machine</h2>
         </div>
         </Fonter>
@@ -25,6 +25,9 @@ border: 2px solid rgba(0,0,0,1);
     margin: auto;
     color: black;
     padding: 30px 30px 10px 30px;
+    @media (max-width: 800px) { padding: 30px 30px 10px 30px; } 
+    @media (max-width: 800px) { padding: 10px; } 
+
     // border: 4px solid rgba(0,0,0,0.5);
     // border-radius: 1vw;
     // background-color: rgba(0,0,0, 0.85);

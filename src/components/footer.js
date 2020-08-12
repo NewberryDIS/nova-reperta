@@ -84,6 +84,8 @@ const FooterWrapper = styled.footer`
             position: relative;
             width: 75%;
             margin: auto;
+            @media (min-width: 800px) { width: 75%; } 
+            @media (max-width: 800px) { width: auto; padding-left: 36px;} 
         }
         overflow: auto;
         // display: none;
@@ -94,6 +96,8 @@ const FooterWrapper = styled.footer`
         bottom: 10vh;
         padding: 50px 50px 30px 50px ;
 
+        @media (min-width: 800px) { padding: 50px 50px 30px 50px } 
+        @media (max-width: 800px) { padding: 10px; } 
         background: white;
         box-shadow: 0 0 10px #000000;
         font-family: 'Alegreya SC', serif;
@@ -114,10 +118,13 @@ const FooterWrapper = styled.footer`
         }
         .creditline {
             display: flex;
+            @media (max-width: 800px) { flex-direction: column; padding-bottom: 15px;} 
+            
         }
 
         .credit {
-            flex-basis: 120px;
+            @media (min-width: 800px) { flex-basis: 120px; } 
+            @media (max-width: 800px) { flex-basis: auto; padding-right: 15px; } 
         }
         .credittext {
             margin: 15px 0;
