@@ -7,6 +7,28 @@ module.exports = {
   pathPrefix: `/nova-reperta`, 
   plugins: [
     {
+      resolve: `gatsby-plugin-google-fonts-v2`,
+      options: {
+        fonts: [
+          {
+            family: 'Cinzel',
+            variable: true,
+            weights: ['400..900']
+          },
+          {
+            family: `Alegreya SC`,
+            strictName: true,
+            weight: [400]
+          },
+          {
+            family: 'Old Standard TT',
+            strictName: true,
+            weight: [400]
+          },
+        ] 
+      }
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-5551324-4",
@@ -41,21 +63,6 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/Newberry_N.svg`, // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Alegreya SC`,
-            variants: [`400`, `700`]
-          },
-          {
-            family: `Cinzel`,
-            variants: [`400`, `700`]
-          },
-        ],
       },
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality

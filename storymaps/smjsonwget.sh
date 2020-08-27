@@ -8,4 +8,4 @@ wget -O alchemist.json https://uploads.knightlab.com/storymapjs/f16f101e1b9e4f19
 wget -O syphiliticpatient.json https://uploads.knightlab.com/storymapjs/f16f101e1b9e4f19898b53b294e8d1dd/novrep-syphilitic/published.json
 wget -O miller.json https://uploads.knightlab.com/storymapjs/f16f101e1b9e4f19898b53b294e8d1dd/novrep-miller/published.json
 wget -O artist.json https://uploads.knightlab.com/storymapjs/f16f101e1b9e4f19898b53b294e8d1dd/novrep-artist/published.json
-scp { *.html *.json storymap.js } $SERVER/novareperta/storymaps/
+# scp { *.html *.json storymap.js } $SERVER/novareperta/storymaps/

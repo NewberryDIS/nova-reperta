@@ -8,6 +8,8 @@ do
         <head>
             <title>Midwest Time Machine</title>
             <script type='text/javascript' src='storymap.js'></script>
+            <link href='https://cdn.knightlab.com/libs/storymapjs/latest/css/fonts/font.oldstandard.css' rel='stylesheet' class='lazyload' charset='utf-8'>
+            <link href='https://cdn.knightlab.com/libs/storymapjs/latest/css/fonts/font.emoji.css' rel='stylesheet' class='lazyload' charset='utf-8'>
             <link rel='stylesheet' href='https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css'>
         </head>
         <body>

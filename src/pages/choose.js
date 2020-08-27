@@ -185,11 +185,13 @@ const Tile = ({ content }) => {
             margin: 0;
             overflow-wrap: normal;
             font-family: 'Cinzel', serif;
+            font-weight: 700;
         }
         .fontname {
         }
         .desctext {
             font-size: 18px;
+            font-weight: 400;
             font-family: 'Alegreya SC', serif;
         }
     `}>
