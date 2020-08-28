@@ -24,4 +24,6 @@ cp -vnr storymaps/*.html public
 cp -vnr storymaps/*.html public/static
 cp -vnr storymaps/*.json public
 cp -vnr storymaps/*.json public/static
+# macos (BSD sed) requires the '' after -i; remove for linux
+find public/ -name 'index.html' -exec sed -i '' "/UA-5551324-4/s/$/ ga('send', 'pageview')\;/g" {} \;
 scp -r public/* $SERVER/novareperta/
