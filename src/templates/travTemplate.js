@@ -108,16 +108,17 @@ export default function Template({
             `} />
             <Leftpanel image={frontmatter.image} text={frontmatter.shorttext} title={frontmatter.title} />
             <Maparea>
-                <iframe title={frontmatter.image} src={'/nova-reperta/static/' + frontmatter.image + '.html'}
-                    css={css`
-                        width: 100%;
-                        height: 100%;
-                        margin: 0;
-                        -webkit-box-shadow: inset 10px 10px 50px 0px rgba(0,0,0,0.75);
-                        -moz-box-shadow: inset 10px 10px 50px 0px rgba(0,0,0,0.75);
-                        box-shadow: inset 10px 10px 50px 0px rgba(0,0,0,0.75);
-                        color:  #e8e9ca;
-                    `} />
+            <iframe title={frontmatter.image} src={'/nova-reperta/static/' + frontmatter.image + '.html'}
+                css={css`
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                -webkit-box-shadow: inset 10px 10px 50px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: inset 10px 10px 50px 0px rgba(0,0,0,0.75);
+                box-shadow: inset 10px 10px 50px 0px rgba(0,0,0,0.75);
+                color:  #e8e9ca;
+                `} />
+                {console.log('/static/' + frontmatter.image + '.html')}
                     
             </Maparea>
         </div>

@@ -6865,6 +6865,8 @@ VCO.StorySlider = VCO.Class.extend({
         this._nav.next.update(
           this.getNavInfo(this._slides[this.current_slide + 1])
         );
+        // ga('send', 'event', { eventCategory: 'StorymapJS', eventAction: 'storymap_click', eventLabel:'nova_reperta'});
+        // console.log("clicky")
       } else {
         this.showNav(this._nav.next, false);
       }
@@ -7154,6 +7156,8 @@ VCO.StorySlider = VCO.Class.extend({
   _initEvents: function() {
     this._nav.next.on("clicked", this._onNavigation, this);
     this._nav.previous.on("clicked", this._onNavigation, this);
+    this._nav.next.on("clicked", function(){ gaSendEvent()});
+    this._nav.previous.on("clicked", function(){ gaSendEvent()});
     if (this._message) {
       this._message.on("clicked", this._onMessageClick, this);
     }
@@ -13961,9 +13965,9 @@ VCO.MapMarker.Leaflet = VCO.MapMarker.extend({
     });
   },
   _createDefaultIcon: function(active) {
-    if (active) {
-        ga('send', 'event', { eventCategory: 'StorymapJS', eventAction: 'storymap_click', eventLabel:'nova_reperta'});
-    }
+    // if (active) {
+    //     ga('send', 'event', { eventCategory: 'StorymapJS', eventAction: 'storymap_click', eventLabel:'nova_reperta'});
+    // }
     var className = active ? "vco-mapmarker-active" : "vco-mapmarker";
     return L.divIcon({
       className: className + " " + this.media_icon_class,
@@ -14986,3 +14990,7 @@ VCO.StoryMap = VCO.Class.extend({
     src = scripts[scripts.length - 1].src;
   _.SCRIPT_PATH = src.substr(0, src.lastIndexOf("/"));
 })(VCO.StoryMap);
+function gaSendEvent(){
+  console.log('ga function running')
+  ga('send', 'event', { eventCategory: 'StorymapJS', eventAction: 'storymap_click', eventLabel:'nova_reperta'});
+}
